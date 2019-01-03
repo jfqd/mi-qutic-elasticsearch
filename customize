@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+
+PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
+
+# Exit if any command fails
+set -o errexit
+
+MUNIN_PLUGINS="
+"
+
+echo "* Activate munin plugins"
+/opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
+
+echo "* Setup nginx"
+mkdir -p /opt/local/etc/nginx/ssl
+
+# Clean up
+echo "* Cleaning up."
+rm /root/customize
+
+# Prepare image for provisioning
+sm-prepare-image -y

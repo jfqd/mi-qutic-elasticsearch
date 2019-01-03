@@ -1,0 +1,8 @@
+name="qutic-elasticsearch"
+organization="qutic development"
+brand="elasticsearch Instance"
+version="18.3.0"
+description="qutic elasticsearch image"
+homepage="https://github.com/jfqd/mi-qutic-elasticsearch"
+users="root admin"
+base="c277c7d4-dde8-11e8-8b40-534c36e692fc"
