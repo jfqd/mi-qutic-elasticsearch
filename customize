@@ -12,6 +12,7 @@ echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 echo "* Setup elasticsearch"
+touch /opt/local/etc/elasticsearch/elasticsearch.keystore
 chown root:elasticsearch /opt/local/etc/elasticsearch/elasticsearch.keystore
 
 mv /opt/local/java/openjdk8/jre/lib/security/java.policy /opt/local/java/openjdk8/jre/lib/security/java.policy.bak
