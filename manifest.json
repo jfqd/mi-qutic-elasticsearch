@@ -1,11 +1,11 @@
 {
   "name":         "qutic-elasticsearch",
-  "version":      "18.3.0",
+  "version":      "20181018.0",
   "description":  "qutic elasticsearch image",
   "organization": "qutic development",
   "brand":        "buildup Instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-elasticsearch",
-  "base":         "c277c7d4-dde8-11e8-8b40-534c36e692fc",
+  "base":         "a3615328-6e4e-11e9-b7e7-efd3885d6221",
   "customer_metadata": {
     "admin_authorized_keys":           {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "ruby_authorized_keys":            {"type": "text", "description": "SSH public authorized key(s) for the ruby user"},
