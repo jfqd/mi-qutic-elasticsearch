@@ -6,14 +6,23 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 set -o errexit
 
 MUNIN_PLUGINS="
+elasticsearch_cache
+elasticsearch_docs
+elasticsearch_gc
+elasticsearch_gc_time
+elasticsearch_jvm
+elasticsearch_ops
+elasticsearch_store
 "
 
 echo "* Activate munin plugins"
+curl -L https://raw.githubusercontent.com/jfqd/smartos-munin-plugins/master/elasticsearch_ > /opt/local/lib/munin/plugins/elasticsearch_
+chmod +x /opt/local/lib/munin/plugins/elasticsearch_
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 echo "* Setup elasticsearch"
-touch /opt/local/etc/elasticsearch/elasticsearch.keystore
-chown root:elasticsearch /opt/local/etc/elasticsearch/elasticsearch.keystore
+# let elasticsearch create the "elasticsearch.keystore" file
+chown elasticsearch:elasticsearch /opt/local/etc/elasticsearch/
 
 mv /opt/local/java/openjdk8/jre/lib/security/java.policy /opt/local/java/openjdk8/jre/lib/security/java.policy.bak
 mv /var/zoneinit/tmp/java.policy /opt/local/java/openjdk8/jre/lib/security/java.policy
